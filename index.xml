@@ -1,47 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Hugo website</title>
-    <link>/</link>
-    <description>Recent content on A Hugo website</description>
+    <title>gexel&#39;s blog</title>
+    <link>https://gexel.github.io/</link>
+    <description>Recent content on gexel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gexel.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>teste</title>
-      <link>/2020/11/20/teste/</link>
+      <title>Uma Possível Generalização do Método dos Mínimos Quadrados Ordinários</title>
+      <link>https://gexel.github.io/2020/11/20/dae/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/11/20/teste/</guid>
-      <description>Dae Feio</description>
-    </item>
-    
-    <item>
-      <title>A Plain Markdown Post</title>
-      <link>/2016/12/30/a-plain-markdown-post/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
-      
-      <guid>/2016/12/30/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
+      <guid>https://gexel.github.io/2020/11/20/dae/</guid>
+      <description>Estamos acostumados a falar do método dos Mínimos Quadrados Ordinários, em que se encontra os coeficientes da reta de regressão \(y_i ≃ \beta_0 + \beta_1 x_i\) minimizando a soma dos quadrados dos resíduos:
+\[ SR_2(\beta_0, \beta_1) = \sum_{i = 1}^n (\beta_0 + \beta_1 x_i - y_i)^2 \]
+Apesar da importância do caso \(p=2\), podemos considerar o caso mais geral de estimadores que minimizam a seguinte expressão:
+\[ SR_p(\beta_0, \beta_1) = \sum_{i = 1}^n |\beta_0 + \beta_1 x_i - y_i |^p \]</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://gexel.github.io/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://gexel.github.io/about/</guid>
       <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/2015/01/01/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
-      
-      <guid>/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
   </channel>

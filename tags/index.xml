@@ -1,10 +1,65 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on A Hugo website</title>
-    <link>/tags/</link>
-    <description>Recent content in Tags on A Hugo website</description>
+    <title>Tags on gexel&#39;s blog</title>
+    <link>https://gexel.github.io/tags/</link>
+    <description>Recent content in Tags on gexel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gexel.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>econometria</title>
+      <link>https://gexel.github.io/tags/econometria/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/tags/econometria/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>estatística</title>
+      <link>https://gexel.github.io/tags/estat%C3%ADstica/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/tags/estat%C3%ADstica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gradient descent</title>
+      <link>https://gexel.github.io/tags/gradient-descent/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/tags/gradient-descent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://gexel.github.io/tags/r/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regressão</title>
+      <link>https://gexel.github.io/tags/regress%C3%A3o/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/tags/regress%C3%A3o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>simulação</title>
+      <link>https://gexel.github.io/tags/simula%C3%A7%C3%A3o/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/tags/simula%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

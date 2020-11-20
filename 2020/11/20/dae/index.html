@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.78.2" />
+
+
+<title>Uma Possível Generalização do Método dos Mínimos Quadrados Ordinários - gexel&#39;s blog</title>
+<meta property="og:title" content="Uma Possível Generalização do Método dos Mínimos Quadrados Ordinários - gexel&#39;s blog">
+
+
+  <link href='https://gexel.github.io/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="https://github.com/gexel/">GitHub</a></li>
+    
+    <li><a href="/about/">Guilherme Exel</a></li>
+    
+    <li><a href="https://twitter.com/gexel">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Uma Possível Generalização do Método dos Mínimos Quadrados Ordinários</h1>
+
+    
+    <span class="article-date">2020-11-20</span>
+    
+
+    <div class="article-content">
+      
+<link href="index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<p>Estamos acostumados a falar do método dos <em>Mínimos Quadrados Ordinários</em>, em que se encontra os coeficientes da reta de regressão <span class="math inline">\(y_i ≃ \beta_0 + \beta_1 x_i\)</span> minimizando a soma dos quadrados dos resíduos:</p>
+<p><span class="math display">\[
+SR_2(\beta_0, \beta_1) = \sum_{i = 1}^n (\beta_0 + \beta_1 x_i - y_i)^2
+\]</span></p>
+<p>Apesar da importância do caso <span class="math inline">\(p=2\)</span>, podemos considerar o caso mais geral de estimadores que minimizam a seguinte expressão:</p>
+<p><span class="math display">\[
+SR_p(\beta_0, \beta_1) = \sum_{i = 1}^n |\beta_0 + \beta_1 x_i - y_i |^p
+\]</span></p>
+<p>Para <span class="math inline">\(p&gt;1\)</span>. Note o uso do <em>módulo</em>, que é importante para garantir a convexidade de casos como <span class="math inline">\(p=3\)</span>.</p>
+<p>Para um <span class="math inline">\(p\)</span> qualquer, como encontrar <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span>?</p>
+<p>As derivadas da soma da <span class="math inline">\(p\)</span>-ésima potência do módilo dos reísduos não são fáceis de trabalhar. Elas são iguais a:</p>
+<p><span class="math display">\[
+\begin{align}
+\frac{\partial}{\partial\beta_1} SR_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n px_i(\beta_1 x_i + \beta_0 - y_i)|\beta_1 x_i + \beta_0 - y_i|^{p-2} \\
+\frac{\partial}{\partial\beta_0} SR_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n p(\beta_1 x_i + \beta_0 - y)|\beta_1 x_i + \beta_0 - y|^{p-2}
+\end{align}
+\]</span></p>
+<p>Mais fácil que estudar as condições de primeira ordem é usar essas derivadas em um algoritmo de <em>gradient descent</em>.</p>
+<p>Primeiro, defino a função <code>gradient</code><span class="math inline">\(: \mathbb{R}^2 \rightarrow \mathbb{R}^2\)</span> que pega um vetor <span class="math inline">\((\beta_1, \beta_0)\)</span> (no código, <code>[a, b]</code>) e calcula seu gradiente.</p>
+<pre class="r"><code>gradient &lt;- function(x, y, p, point) {
+  a &lt;- point[1]
+  b &lt;- point[2]
+  partiala &lt;- sum(p*x*(b - y + x*a)*abs(b - y + x*a)^(p-2))
+  partialb &lt;- sum(p*(a*x - y + b)*abs(x*a - y + b)^(p-2))
+  
+  return(c(partiala, partialb))
+}</code></pre>
+<p>Em seguida, é preciso definir um procedimento de <em>descent</em>. A baixa dimensão do problema nos permite usar um bastante simples: inicia-se no ponto <span class="math inline">\(\beta_1 = \beta_0 = 0\)</span> e, a cada iteração, move-se uma distância de <span class="math inline">\(0.01\)</span> unidades na direção contrária ao gradiente da função no ponto. A convexidade da função garante que não ficaremos presos em mínimos locais, pois todo mínimo local é também um mínimo global. Dessa forma, em <em>dez mil</em> passos estaremos bem perto do ponto de mínimo.</p>
+<pre class="r"><code>descent &lt;- function(x, y, p) {
+  point &lt;- c(0,0)
+  gradi &lt;- c(10,10)
+  
+  for (i in 1:10000) {
+    gradi &lt;- gradient(x, y, p, point)
+    gamma &lt;- 0.01
+    if (normv(gradi) &lt; gamma) gamma &lt;- gamma/1.5
+    point &lt;- point - gamma*gradi/normv(gradi)
+  }
+  return(point)
+}</code></pre>
+<p>Em que <code>normv()</code> é a função que calcula a norma euclidiana <span class="math inline">\(|| \cdot ||_2\)</span> de um vetor. Agora, podemos gerar um gráfico que mostra a posição da reta de regressão a cada valor de <span class="math inline">\(p\)</span>. Abaixo, vemos gráficos onde a reta mais <span style="color:red">vermelha</span> apresenta <span style="color:red"><span class="math inline">\(p=1\)</span></span>, e a mais <span style="color:blue">azul</span> apresenta <span style="color:red"><span class="math inline">\(p=60\)</span></span>.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="33%" /><img src="index_files/figure-html/unnamed-chunk-3-2.png" width="33%" /><img src="index_files/figure-html/unnamed-chunk-3-3.png" width="33%" /></p>
+<p>Os estimadores ficam mais diferentes na presença de <em>outliers</em>:</p>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="33%" /><img src="index_files/figure-html/unnamed-chunk-4-2.png" width="33%" /><img src="index_files/figure-html/unnamed-chunk-4-3.png" width="33%" /></p>
+<p>Quanto maior <span class="math inline">\(p\)</span>, maior é a importância de erros grandes.</p>
+<p>Essa visualização também é apropriada para o uso de animação:</p>
+<p><img src="https://raw.githubusercontent.com/gexel/gexel.github.io/main/reg1.gif" /></p>
+<p><img src="https://raw.githubusercontent.com/gexel/gexel.github.io/main/reg2.gif" /></p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+
