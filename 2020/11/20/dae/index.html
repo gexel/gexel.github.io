@@ -118,9 +118,9 @@ SR_p(\beta_0, \beta_1) = \sum_{i = 1}^n |\beta_0 + \beta_1 x_i - y_i |^p
   return(point)
 }</code></pre>
 <p>Em que <code>normv()</code> é a função que calcula a norma euclidiana <span class="math inline">\(|| \cdot ||_2\)</span> de um vetor. Agora, podemos gerar um gráfico que mostra a posição da reta de regressão a cada valor de <span class="math inline">\(p\)</span>. Abaixo, vemos gráficos onde a reta mais <span style="color:red">vermelha</span> apresenta <span style="color:red"><span class="math inline">\(p=1\)</span></span>, e a mais <span style="color:blue">azul</span> apresenta <span style="color:red"><span class="math inline">\(p=60\)</span></span>.</p>
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="33%" /><img src="index_files/figure-html/unnamed-chunk-3-2.png" width="33%" /><img src="index_files/figure-html/unnamed-chunk-3-3.png" width="33%" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="50%" /><img src="index_files/figure-html/unnamed-chunk-3-2.png" width="50%" /><img src="index_files/figure-html/unnamed-chunk-3-3.png" width="50%" /><img src="index_files/figure-html/unnamed-chunk-3-4.png" width="50%" /></p>
 <p>Os estimadores ficam mais diferentes na presença de <em>outliers</em>:</p>
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="33%" /><img src="index_files/figure-html/unnamed-chunk-4-2.png" width="33%" /><img src="index_files/figure-html/unnamed-chunk-4-3.png" width="33%" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="50%" /><img src="index_files/figure-html/unnamed-chunk-4-2.png" width="50%" /><img src="index_files/figure-html/unnamed-chunk-4-3.png" width="50%" /><img src="index_files/figure-html/unnamed-chunk-4-4.png" width="50%" /></p>
 <p>Quanto maior <span class="math inline">\(p\)</span>, maior é a importância de erros grandes.</p>
 <p>Essa visualização também é apropriada para o uso de animação:</p>
 <p><img src="https://raw.githubusercontent.com/gexel/gexel.github.io/master/aux/reg1.gif" /></p>
