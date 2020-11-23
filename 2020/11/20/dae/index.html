@@ -87,7 +87,7 @@ y_i = \beta_0 + \beta_1 x_i + \varepsilon_i \quad , \quad \quad i = 1, 2, \cdots
 <p>E, a partir de <span class="math inline">\(n\)</span> observações, você busca estimar <span class="math inline">\(\hat\beta_0\)</span> e <span class="math inline">\(\hat\beta_1\)</span>, como você pode calcular esses coeficientes?</p>
 <p>O leitor deve estar familiarizado com o método dos <em>Mínimos Quadrados Ordinários</em> (MQO), em que se encontra os coeficientes <span class="math inline">\(\hat \beta_0\)</span> e <span class="math inline">\(\hat\beta_1\)</span> da reta de regressão <span class="math inline">\(\hat y_i = \hat \beta_0 + \hat\beta_1 x_i\)</span> minimizando a soma dos quadrados dos resíduos:</p>
 <p><span class="math display">\[
-\sum_{i = 1}^n \varepsilon_i^2 = \sum_{i = 1}^n (y_i - \beta_0 - \beta_1 x_i)^2
+\sum_{i = 1}^n \hat\varepsilon_i^2 = \sum_{i = 1}^n (y_i - \hat \beta_0 - \hat \beta_1 x_i)^2
 \]</span></p>
 <p>Talvez você já tenha se questionado sobre o uso do “quadrado”. Por que não o valor absoluto? Por que não a décima potência? Se você já perguntou isso a um professor, talvez tenha recebido uma resposta relacionada com diferenciabilidade no ponto de mínimo<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, mas isso é de pouca importância. Na verdade, a escolha por minimizar a soma dos <em>quadrados</em> dos resíduos não é arbitrária, e é melhor compreendida através da representação matricial do modelo<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>:</p>
 <p><span class="math display">\[
@@ -145,7 +145,8 @@ y_n - \beta_0 - \beta_1 x_{n1} - \beta_2 x_{n2} - \cdots - \beta_k x_{nk}\\
 <p>Ou, voltando para o caso da regressão linear <em>simples</em>, em que <span class="math inline">\(k = 1\)</span>:</p>
 <p><span class="math display">\[
 \mathop{\mathrm{argmin}}_{\boldsymbol{\beta}}||\boldsymbol{\varepsilon}||_2 = \mathop{\mathrm{argmin}}_{(\beta_0, \beta_1)}  \sum_{i = 1}^n (y_i - \beta_0 - \beta_1 x_i)^2
-\]</span></p>
+\]</span>
+O <em>quadrado</em> aparece, portanto, como consquência do uso da norma euclidiana.</p>
 <p>Se isso não é suficiente para convencer que a escolha pela minimização da soma dos <em>quadrados</em> dos resíduos é especial, note que o <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Markov_theorem">teorema de Gauss-Markov</a> mostra que o <em>Melhor Estimador Linear Não Viesado</em> (<em>MELNV</em>) é o estimador MQO. Além disso, sob a hipótese de que os erros são normalmente distribuídos, é possível mostrar que os estimadores MQO e de <a href="https://en.wikipedia.org/wiki/Ordinary_least_squares#Maximum_likelihood">Máxima Verossimilhança</a> são equivalentes.</p>
 </div>
 <div id="minimizando-a-p-ésima-potência-do-módulo-dos-resíduos" class="section level2">
