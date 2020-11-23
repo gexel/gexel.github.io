@@ -13,10 +13,10 @@
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://gexel.github.io/2020/11/20/dae/</guid>
-      <description>Estamos acostumados a falar do método dos Mínimos Quadrados Ordinários, em que se encontra os coeficientes da reta de regressão \(y_i ≃ \beta_0 + \beta_1 x_i\) minimizando a soma dos quadrados dos resíduos:
-\[ SR_2(\beta_0, \beta_1) = \sum_{i = 1}^n (\beta_0 + \beta_1 x_i - y_i)^2 \]
-Apesar da importância do caso \(p=2\), podemos considerar o caso mais geral de estimadores que minimizam a seguinte expressão:
-\[ SR_p(\beta_0, \beta_1) = \sum_{i = 1}^n |\beta_0 + \beta_1 x_i - y_i |^p \]</description>
+      <description>Por que minimizar a soma dos quadrados dos resíduos? Se você acredita que uma certa variável \(\mathbf{y} = (y_1, y_2, \cdots, y_{n-1}, y_n )\) é gerada por
+\[ y_i = \beta_0 + \beta_1 x_i + \varepsilon_i \quad , \quad \quad i = 1, 2, \cdots, n \]
+E, a partir de \(n\) observações, você busca estimar \(\hat\beta_0\) e \(\hat\beta_1\), como você pode calcular esses coeficientes?
+O leitor deve estar familiarizado com o método dos Mínimos Quadrados Ordinários (MQO), em que se encontra os coeficientes \(\hat \beta_0\) e \(\hat\beta_1\) da reta de regressão \(\hat y_i = \hat \beta_0 + \hat\beta_1 x_i\) minimizando a soma dos quadrados dos resíduos:</description>
     </item>
     
   </channel>
