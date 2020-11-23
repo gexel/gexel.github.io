@@ -87,9 +87,9 @@ y_i = \beta_0 + \beta_1 x_i + \varepsilon_i \quad , \quad \quad i = 1, 2, \cdots
 <p>E, a partir de <span class="math inline">\(n\)</span> observações, você busca estimar <span class="math inline">\(\hat\beta_0\)</span> e <span class="math inline">\(\hat\beta_1\)</span>, como você pode calcular esses coeficientes?</p>
 <p>O leitor deve estar familiarizado com o método dos <em>Mínimos Quadrados Ordinários</em> (MQO), em que se encontra os coeficientes <span class="math inline">\(\hat \beta_0\)</span> e <span class="math inline">\(\hat\beta_1\)</span> da reta de regressão <span class="math inline">\(\hat y_i = \hat \beta_0 + \hat\beta_1 x_i\)</span> minimizando a soma dos quadrados dos resíduos:</p>
 <p><span class="math display">\[
-\sum_{i = 1}^n \varepsilon_i^2 = \sum_{i = 1}^n (\beta_0 + \beta_1 x_i - y_i)^2
+\sum_{i = 1}^n \varepsilon_i^2 = \sum_{i = 1}^n (y_i - \beta_0 - \beta_1 x_i)^2
 \]</span></p>
-<p>Talvez você já tenha se questionado sobre o uso do “quadrado”. Por que não o valor absoluto? Por que não a décima potência? Se você já perguntou isso a um professor, talvez tenha recebido uma resposta relacionada com diferenciabilidade no ponto de mínimo<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, mas isso é de pouca importância. Na verdade, a escolha por minimizar a soma dos <em>quadrados</em> dos resíduos não é arbitrária, e é melhor compreendida através da representação matricial do modelo:</p>
+<p>Talvez você já tenha se questionado sobre o uso do “quadrado”. Por que não o valor absoluto? Por que não a décima potência? Se você já perguntou isso a um professor, talvez tenha recebido uma resposta relacionada com diferenciabilidade no ponto de mínimo<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, mas isso é de pouca importância. Na verdade, a escolha por minimizar a soma dos <em>quadrados</em> dos resíduos não é arbitrária, e é melhor compreendida através da representação matricial do modelo<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>:</p>
 <p><span class="math display">\[
 \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}
 \]</span></p>
@@ -124,10 +124,10 @@ y_n \\
 \vdots \\
 \varepsilon_n  \\
 \end{array}\right] = \left[\begin{array}{cccc}
-\beta_0 + \beta_1 x_{11} + \beta_2 x_{12} + \cdots + \beta_k x_{1k} - y_1 \\
-\beta_0 + \beta_1 x_{21} + \beta_2 x_{22} + \cdots + \beta_k x_{2k} - y_2  \\
+y_1 - \beta_0 - \beta_1 x_{11} - \beta_2 x_{12} - \cdots - \beta_k x_{1k}\\
+y_2 - \beta_0 - \beta_1 x_{21} - \beta_2 x_{22} - \cdots - \beta_k x_{2k}\\
 \vdots \\
-\beta_0 + \beta_1 x_{n1} + \beta_2 x_{n2} + \cdots + \beta_k x_{nk} - y_n  \\
+y_n - \beta_0 - \beta_1 x_{n1} - \beta_2 x_{n2} - \cdots - \beta_k x_{nk}\\
 \end{array}\right]
 \]</span></p>
 <p>Por esta perspectiva, o problema é encontrar <span class="math inline">\(\boldsymbol{\beta}\)</span> que minimiza <span class="math inline">\(||\boldsymbol{\varepsilon}||_2 = ||\mathbf{y} - \mathbf{X}\boldsymbol{\beta}||_2\)</span>, onde a função</p>
@@ -138,28 +138,28 @@ y_n \\
 \end{aligned}
 \]</span></p>
 <p>É a <a href="https://en.wikipedia.org/wiki/Norm_(mathematics)#p-norm">norma <span class="math inline">\(\ell^p\)</span></a> de um vetor.</p>
-<p>Para o caso da norma euclidiana (<span class="math inline">\(p = 2\)</span>), o problema fica equivalente ao problema do método dos <em>Mínimos Quadrados Ordinários</em>, uma vez que:</p>
+<p>Para o caso da norma euclidiana (<span class="math inline">\(p = 2\)</span>), a expressão que queremos minimizar fica igual à do método dos <em>Mínimos Quadrados Ordinários</em> vista anteriormente, uma vez que:</p>
 <p><span class="math display">\[
-\mathop{\mathrm{argmin}}_{\boldsymbol{\beta}} ||\boldsymbol{\varepsilon}||_2 = \mathop{\mathrm{argmin}}_{\boldsymbol{\beta}} \sum_{i = 1}^n (\beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \cdots + \beta_k x_{ik} - y_i)^2
+\mathop{\mathrm{argmin}}_{\boldsymbol{\beta}} ||\boldsymbol{\varepsilon}||_2 = \mathop{\mathrm{argmin}}_{\boldsymbol{\beta}} \sum_{i = 1}^n (y_i - \beta_0 - \beta_1 x_{i1} - \beta_2 x_{i2} - \cdots - \beta_k x_{ik})^2
 \]</span></p>
-<p>Ou, no caso da regressão linear simples, em que <span class="math inline">\(k = 1\)</span>:</p>
+<p>Ou, voltando para o caso da regressão linear <em>simples</em>, em que <span class="math inline">\(k = 1\)</span>:</p>
 <p><span class="math display">\[
-\mathop{\mathrm{argmin}}_{\boldsymbol{\beta}}||\boldsymbol{\varepsilon}||_2 = \mathop{\mathrm{argmin}}_{(\beta_0, \beta_1)}  \sum_{i = 1}^n (\beta_0 + \beta_1 x_i - y_i)^2
+\mathop{\mathrm{argmin}}_{\boldsymbol{\beta}}||\boldsymbol{\varepsilon}||_2 = \mathop{\mathrm{argmin}}_{(\beta_0, \beta_1)}  \sum_{i = 1}^n (y_i - \beta_0 - \beta_1 x_i)^2
 \]</span></p>
-<p>Se isso não é suficiente para convencer que a escolha pela minimização da soma dos <em>quadrados</em> dos resíduos é especial, note que o <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Markov_theorem">teorema de Gauss-Markov</a> mostra que o <em>Melhor Estimador Linear Não Viesado</em> (<em>MELNV</em>) é o estimador encontrado através do método dos mínimos quadrados ordinários. Além disso, sob a hipótese de que os erros são normalmente distribuídos, é possível mostrar que os estimadores encontrados por MQO e por <a href="https://en.wikipedia.org/wiki/Ordinary_least_squares#Maximum_likelihood">Máxima Verossimilhança</a> são equivalentes.</p>
+<p>Se isso não é suficiente para convencer que a escolha pela minimização da soma dos <em>quadrados</em> dos resíduos é especial, note que o <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Markov_theorem">teorema de Gauss-Markov</a> mostra que o <em>Melhor Estimador Linear Não Viesado</em> (<em>MELNV</em>) é o estimador MQO. Além disso, sob a hipótese de que os erros são normalmente distribuídos, é possível mostrar que os estimadores MQO e de <a href="https://en.wikipedia.org/wiki/Ordinary_least_squares#Maximum_likelihood">Máxima Verossimilhança</a> são equivalentes.</p>
 </div>
 <div id="minimizando-a-p-ésima-potência-do-módulo-dos-resíduos" class="section level2">
 <h2>Minimizando a <span class="math inline">\(p\)</span>-ésima potência do módulo dos resíduos</h2>
-<p>Tendo reconhecido a notabilidade do MQO, podemos explorar a classe de estimadores encontrados pela minimização da expressão</p>
+<p>Tendo reconhecido a notabilidade do MQO, podemos explorar a classe de estimadores encontrados pela minimização da expressão:</p>
 <p><span class="math display">\[
-S_p(\beta_0, \beta_1) = \sum_{i = 1}^n |\beta_0 + \beta_1 x_i - y_i |^p \quad, \quad \quad p \geq 1
+S_p(\beta_0, \beta_1) = \sum_{i = 1}^n |y_i - \beta_0 - \beta_1 x_i|^p \quad, \quad \quad p \geq 1
 \]</span></p>
-<p>Note o uso do <em>módulo</em>, que é importante para garantir a convexidade de casos como <span class="math inline">\(p=3\)</span>.</p>
+<p>Para cada valor de <span class="math inline">\(p\)</span>. Note o uso do <em>módulo</em>, que é importante para garantir a convexidade de casos como <span class="math inline">\(p=3\)</span>.</p>
 <p>É preciso descobrir como encontrar <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> para um valor de <span class="math inline">\(p\geq1\)</span> qualquer. Infelizmente, as condições de primeira ordem não iluminam o problema, uma vez que as derivadas parciais da expressão acima não são fáceis de trabalhar:</p>
 <p><span class="math display">\[
 \begin{align}
 \frac{\partial}{\partial\beta_1} SR_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n px_i(\beta_1 x_i + \beta_0 - y_i)|\beta_1 x_i + \beta_0 - y_i|^{p-2} \\
-\frac{\partial}{\partial\beta_0} SR_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n p(\beta_1 x_i + \beta_0 - y)|\beta_1 x_i + \beta_0 - y|^{p-2}
+\frac{\partial}{\partial\beta_0} SR_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n p(\beta_1 x_i + \beta_0 - y_i)|\beta_1 x_i + \beta_0 - y_i|^{p-2}
 \end{align}
 \]</span></p>
 <p>Mais fácil que estudar as condições de primeira ordem é usar essas derivadas em um algoritmo de <em>gradient descent</em>.</p>
@@ -203,6 +203,7 @@ S_p(\beta_0, \beta_1) = \sum_{i = 1}^n |\beta_0 + \beta_1 x_i - y_i |^p \quad, \
 <hr />
 <ol>
 <li id="fn1"><p>Claro, se deseja-se usar as condições de primeira ordem para encontrar os estimadores analiticamente, é importante que a função seja diferenciável no seu ponto de mínimo, além de que ela precisa, antes de tudo, possuir um ponto de mínimo global. Isso descarta a função módulo e as potências ímpares. Contudo, note que a <span class="math inline">\(p\)</span>-ésima potência do módulo: <span class="math display">\[|\varepsilon_i|^p, \quad \text{com } p \geq 2\]</span> é tanto diferenciável no ponto de mínimo quanto convexa. Conclui-se que conveniência matemática não é uma justificativa apropriada para uma escolha tão consequente.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>A discussão acima se refere à regressão linear <em>simples</em>, mas, a seguir, será discutido o caso mais geral com <span class="math inline">\(k\)</span> variáveis independentes.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
