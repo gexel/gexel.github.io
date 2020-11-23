@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>equações diferenciais on gexel&#39;s blog</title>
+    <link>https://gexel.github.io/tags/equa%C3%A7%C3%B5es-diferenciais/</link>
+    <description>Recent content in equações diferenciais on gexel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gexel.github.io/tags/equa%C3%A7%C3%B5es-diferenciais/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Constant Relative Risk Aversion</title>
+      <link>https://gexel.github.io/2020/11/23/crra/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/2020/11/23/crra/</guid>
+      <description>CRRA Esta é a definição da medida \(\sigma(c)\) de Relative Risk Aversion:
+\[ \sigma(c) := - c \frac{U&amp;#39;&amp;#39;(c)}{U&amp;#39;(c)} \]
+Existe alguma especificação da função de utilidade \(U: \mathbb{R}_+ \rightarrow \mathbb{R}_+\) tal que a medida de R.R.A. seja constante (independente de c)?
+Basta resolver a equação diferencial:
+\[ \sigma = - c \frac{U&amp;#39;&amp;#39;(c)}{U&amp;#39;(c)} \]
+Para facilitar, defina \(f(c) = U&amp;#39;(c)\).
+\[ \sigma = - c \frac{f&amp;#39;(c)}{f(c)} \]
+Observe que \(\frac{f&amp;#39;(c)}{f(c)} = ln(f(c))&amp;#39;\)</description>
+    </item>
+    
+  </channel>
+</rss>
