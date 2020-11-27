@@ -78,17 +78,23 @@
 <p><span class="math display">\[
 \sigma(c) := - c \frac{U&#39;&#39;(c)}{U&#39;(c)}
 \]</span></p>
-<p>Existe alguma especificação da função de utilidade <span class="math inline">\(U: \mathbb{R}_+ \rightarrow \mathbb{R}_+\)</span> tal que a medida de <em>R.R.A.</em> seja constante (independente de c)?</p>
-<p>Basta resolver a equação diferencial:</p>
+<p>Existe alguma especificação da função de utilidade <span class="math inline">\(U: \mathbb{R}_+ \rightarrow \mathbb{R}_+\)</span> tal que a medida de <em>R.R.A.</em> seja constante (independente de c)? Para que isso seja verdade, deve valer a equação:</p>
 <p><span class="math display">\[
-\sigma = - c \frac{U&#39;&#39;(c)}{U&#39;(c)}
+\sigma \equiv - c \frac{U&#39;&#39;(c)}{U&#39;(c)}
 \]</span></p>
+<p>Talvez você já esteja familiarizado com a função de <em>Constant Relative Risk Aversion</em>. Contudo, ao invés de simplesmente lembrar da forma funcional e verificar se a equação acima é verdadeira, podemos entender a equação acima como uma equação diferencial e resolvê-la.</p>
 <p>Para facilitar, defina <span class="math inline">\(f(c) = U&#39;(c)\)</span>.</p>
 <p><span class="math display">\[
 \sigma = - c \frac{f&#39;(c)}{f(c)}
 \]</span></p>
 <p>Observe que <span class="math inline">\(\frac{f&#39;(c)}{f(c)} = ln(f(c))&#39;\)</span></p>
-
+<p>Para ver isto, faça o caminho contrário usando a regra da cadeia:
+<span class="math display">\[
+(g \circ h)&#39;(x) = g&#39;(h(x))h&#39;(x)
+\]</span>
+<span class="math display">\[
+ln(f(c))&#39; = \frac{1}{f(c)} \cdot f&#39;(c) = \frac{f&#39;(c)}{f(c)}
+\]</span></p>
 <p><span class="math display">\[
 ln(f(c))&#39; = - \frac{\sigma}{c}
 \]</span></p>

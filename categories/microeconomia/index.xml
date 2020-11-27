@@ -15,12 +15,9 @@
       <guid>https://gexel.github.io/2020/11/23/crra/</guid>
       <description>CRRA Esta é a definição da medida \(\sigma(c)\) de Relative Risk Aversion:
 \[ \sigma(c) := - c \frac{U&amp;#39;&amp;#39;(c)}{U&amp;#39;(c)} \]
-Existe alguma especificação da função de utilidade \(U: \mathbb{R}_+ \rightarrow \mathbb{R}_+\) tal que a medida de R.R.A. seja constante (independente de c)?
-Basta resolver a equação diferencial:
-\[ \sigma = - c \frac{U&amp;#39;&amp;#39;(c)}{U&amp;#39;(c)} \]
-Para facilitar, defina \(f(c) = U&amp;#39;(c)\).
-\[ \sigma = - c \frac{f&amp;#39;(c)}{f(c)} \]
-Observe que \(\frac{f&amp;#39;(c)}{f(c)} = ln(f(c))&amp;#39;\)</description>
+Existe alguma especificação da função de utilidade \(U: \mathbb{R}_+ \rightarrow \mathbb{R}_+\) tal que a medida de R.R.A. seja constante (independente de c)? Para que isso seja verdade, deve valer a equação:
+\[ \sigma \equiv - c \frac{U&amp;#39;&amp;#39;(c)}{U&amp;#39;(c)} \]
+Talvez você já esteja familiarizado com a função de Constant Relative Risk Aversion.</description>
     </item>
     
   </channel>
