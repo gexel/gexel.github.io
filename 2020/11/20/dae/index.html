@@ -6,8 +6,8 @@
 <meta name="generator" content="Hugo 0.78.2" />
 
 
-<title>Uma Possível Generalização do Método dos Mínimos Quadrados Ordinários - gexel&#39;s blog</title>
-<meta property="og:title" content="Uma Possível Generalização do Método dos Mínimos Quadrados Ordinários - gexel&#39;s blog">
+<title>Método dos Mínimos ________ Ordinários - gexel&#39;s blog</title>
+<meta property="og:title" content="Método dos Mínimos ________ Ordinários - gexel&#39;s blog">
 
 
   <link href='https://gexel.github.io/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -67,7 +67,7 @@
     <span class="article-duration">6 min read</span>
     
 
-    <h1 class="article-title">Uma Possível Generalização do Método dos Mínimos Quadrados Ordinários</h1>
+    <h1 class="article-title">Método dos Mínimos ________ Ordinários</h1>
 
     
     <span class="article-date">2020-11-20</span>
@@ -161,8 +161,8 @@ S_p(\beta_0, \beta_1) = \sum_{i = 1}^n |y_i - \beta_0 - \beta_1 x_i|^p \quad, \q
 <p>É preciso descobrir como encontrar <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> para um valor de <span class="math inline">\(p\geq1\)</span> qualquer. Infelizmente, as condições de primeira ordem não iluminam o problema, uma vez que as derivadas parciais da expressão acima não são fáceis de trabalhar:</p>
 <p><span class="math display">\[
 \begin{align}
-\frac{\partial}{\partial\beta_1} SR_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n px_i(\beta_1 x_i + \beta_0 - y_i)|\beta_1 x_i + \beta_0 - y_i|^{p-2} \\
-\frac{\partial}{\partial\beta_0} SR_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n p(\beta_1 x_i + \beta_0 - y_i)|\beta_1 x_i + \beta_0 - y_i|^{p-2}
+\frac{\partial}{\partial\beta_1} S_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n px_i(\beta_1 x_i + \beta_0 - y_i)|\beta_1 x_i + \beta_0 - y_i|^{p-2} \\
+\frac{\partial}{\partial\beta_0} S_p(\beta_0, \beta_1) &amp;= \sum_{i = 1}^n p(\beta_1 x_i + \beta_0 - y_i)|\beta_1 x_i + \beta_0 - y_i|^{p-2}
 \end{align}
 \]</span></p>
 <p>Mais fácil que estudar as condições de primeira ordem é usar essas derivadas em um algoritmo de <em>gradient descent</em>.</p>
@@ -196,8 +196,8 @@ S_p(\beta_0, \beta_1) = \sum_{i = 1}^n |y_i - \beta_0 - \beta_1 x_i|^p \quad, \q
 <p>Em outras palavras, quanto maior <span class="math inline">\(p\)</span>, maior é o <em>peso</em> dado a resíduos grandes.</p>
 <p>Animação é uma forma de visualização muito adequada para este contexto. A dimensão temporal representa a variação do valor de <span class="math inline">\(p\)</span>, que pode ser acompanhado no canto superior esquerdo de cada gráfico:</p>
 <p align="center">
-<p><img src="https://raw.githubusercontent.com/gexel/gexel.github.io/master/aux/reg1.gif" /></p>
-<img src="https://raw.githubusercontent.com/gexel/gexel.github.io/master/aux/reg2.gif" />
+<p><img src="https://raw.githubusercontent.com/gexel/gexel.github.io/master/aux/reg1.gif" style="width:80.0%" /></p>
+<img src="https://raw.githubusercontent.com/gexel/gexel.github.io/master/aux/reg2.gif" style="width:80.0%" />
 </p>
 <p>Note que a reta de regressão do caso <span class="math inline">\(p = 1\)</span> sempre passa por cima de pelo menos duas observações.</p>
 <p>Considere uma ordenação crescente em <span class="math inline">\(y\)</span> das obervações, de forma que <span class="math inline">\((x_1, y_1)\)</span> é a observação com menor valor de <span class="math inline">\(y\)</span> e <span class="math inline">\((x_n, y_n)\)</span> é a observação com maior valor de <span class="math inline">\(y\)</span>. Enquanto que a reta de regressão do caso <span class="math inline">\(p=2\)</span> passa necessariamente por <span class="math inline">\(\bigg(\frac{\sum^n_{i=1} x_i}{n}, \frac{\sum^n_{i=1} y_i}{n}\bigg)\)</span>, a reta de regressão do caso limite <span class="math inline">\(p \rightarrow \infty\)</span> passa necessariamente por <span class="math inline">\((\frac{x_n + x_1}{2}, \frac{y_n + y_1}{2})\)</span>. A demonstração desta propriedade fica como exercício para o leitor.</p>
@@ -205,7 +205,7 @@ S_p(\beta_0, \beta_1) = \sum_{i = 1}^n |y_i - \beta_0 - \beta_1 x_i|^p \quad, \q
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Claro, se deseja-se usar as condições de primeira ordem para encontrar os estimadores analiticamente, é importante que a função seja diferenciável no seu ponto de mínimo, além de que ela precisa, antes de tudo, possuir um ponto de mínimo global. Isso descarta a função módulo e as potências ímpares. Contudo, note que a <span class="math inline">\(p\)</span>-ésima potência do módulo: <span class="math display">\[|\varepsilon_i|^p, \quad \text{com } p \geq 2\]</span> é tanto diferenciável no ponto de mínimo quanto convexa. Conclui-se que conveniência matemática não é uma justificativa apropriada para uma escolha tão consequente.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Claro, se deseja-se usar as condições de primeira ordem para encontrar os estimadores analiticamente, é importante que a função seja diferenciável no seu ponto de mínimo, além de que ela precisa, antes de tudo, possuir um ponto de mínimo global. Isso descarta a função módulo e as potências ímpares. Contudo, note que a <span class="math inline">\(p\)</span>-ésima potência do módulo: <span class="math display">\[|\varepsilon_i|^p, \quad \text{com } p &gt; 1\]</span> é tanto diferenciável no ponto de mínimo quanto convexa. Conclui-se que conveniência matemática não é uma justificativa apropriada para uma escolha tão consequente.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 <li id="fn2"><p>A discussão acima se refere à regressão linear <em>simples</em>, mas, a seguir, será discutido o caso mais geral com <span class="math inline">\(k\)</span> variáveis independentes.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
