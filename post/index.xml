@@ -6,7 +6,19 @@
     <description>Recent content in Posts on gexel&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gexel.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gexel.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maximização do Bem Estar</title>
+      <link>https://gexel.github.io/2020/12/13/max-bem-estar/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/2020/12/13/max-bem-estar/</guid>
+      <description>O sistema de Equações Diferenciais Como visto no documento Sobre a atividade 2-4, a especificação do Nathan para a função utilidade da Questão 4 da Semana 2 resulta no sistema de equações diferenciais:
+\[\begin{align} L&amp;#39; &amp;amp;= \frac{(1-L)\sqrt{L}}{2\sqrt{K}} \\ K&amp;#39; &amp;amp;= \frac{(3L-1)\sqrt{K}}{2\sqrt{L}} \end{align}\]
+Que pode ser resolvido numericamente por um algoritmo iterativo simples:
+Primeiro definimos a função que calcula as variações \(dL\) e \(dK\) a partir dos valores instantâneos de \(L(t)\) e \(K(t)\):</description>
+    </item>
+    
     <item>
       <title>Constant Relative Risk Aversion</title>
       <link>https://gexel.github.io/2020/11/23/crra/</link>
