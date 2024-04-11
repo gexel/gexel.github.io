@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>otimização on gexel&#39;s blog</title>
+    <link>https://gexel.github.io/tags/otimiza%C3%A7%C3%A3o/</link>
+    <description>Recent content in otimização on gexel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gexel.github.io/tags/otimiza%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maximização do Bem Estar</title>
+      <link>https://gexel.github.io/2020/12/13/max-bem-estar/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/2020/12/13/max-bem-estar/</guid>
+      <description>O sistema de Equações Diferenciais Como visto no documento Sobre a atividade 2-4, a especificação do Nathan para a função utilidade da Questão 4 da Semana 2 resulta no sistema de equações diferenciais:
+\[\begin{align} L&amp;#39; &amp;amp;= \frac{(1-L)\sqrt{L}}{2\sqrt{K}} \\ K&amp;#39; &amp;amp;= \frac{(3L-1)\sqrt{K}}{2\sqrt{L}} \end{align}\]
+Que pode ser resolvido numericamente por um algoritmo iterativo simples:
+Primeiro definimos a função que calcula as variações \(dL\) e \(dK\) a partir dos valores instantâneos de \(L(t)\) e \(K(t)\):</description>
+    </item>
+    
+    <item>
+      <title>Resolvendo o Modelo de Crescimento Neoclássico</title>
+      <link>https://gexel.github.io/2020/11/23/neoclassical/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/2020/11/23/neoclassical/</guid>
+      <description>A dinâmica do modelo de crescimento neoclássico Neste post, pretendo encontrar a solução para a dinâmica do modelo de crescimento neoclássico, isto é, a regra para as sequências \(\{k_t\}_{t = 0}^\infty\) e \(\{c_t\}_{t = 0}^\infty\) dado um valor inicial \(k_0 &amp;gt; 0\).
+O problema O modelo de crescimento neoclássico tem solução analítica quando \(\delta = 1\), isto é, quando todo o capital se deprecia de um período para o outro, então vamos nos limitar a este caso.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>equações diferenciais on gexel&#39;s blog</title>
+    <link>https://gexel.github.io/tags/equa%C3%A7%C3%B5es-diferenciais/</link>
+    <description>Recent content in equações diferenciais on gexel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gexel.github.io/tags/equa%C3%A7%C3%B5es-diferenciais/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Constant Relative Risk Aversion</title>
+      <link>https://gexel.github.io/2020/11/23/crra/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/2020/11/23/crra/</guid>
+      <description>CRRA Esta é a definição da medida \(\sigma(c)\) de Relative Risk Aversion:
+\[ \sigma(c) := - c \frac{U&amp;#39;&amp;#39;(c)}{U&amp;#39;(c)} \]
+Existe alguma especificação da função de utilidade \(U: \mathbb{R}_+ \rightarrow \mathbb{R}_+\) tal que a medida de R.R.A. seja constante (independente de c)? Para que isso seja verdade, deve valer a equação:
+\[ \sigma \equiv - c \frac{U&amp;#39;&amp;#39;(c)}{U&amp;#39;(c)} \]
+Talvez você já esteja familiarizado com a função de Constant Relative Risk Aversion.</description>
+    </item>
+    
+    <item>
+      <title>Resolvendo o Modelo de Crescimento Neoclássico</title>
+      <link>https://gexel.github.io/2020/11/23/neoclassical/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/2020/11/23/neoclassical/</guid>
+      <description>A dinâmica do modelo de crescimento neoclássico Neste post, pretendo encontrar a solução para a dinâmica do modelo de crescimento neoclássico, isto é, a regra para as sequências \(\{k_t\}_{t = 0}^\infty\) e \(\{c_t\}_{t = 0}^\infty\) dado um valor inicial \(k_0 &amp;gt; 0\).
+O problema O modelo de crescimento neoclássico tem solução analítica quando \(\delta = 1\), isto é, quando todo o capital se deprecia de um período para o outro, então vamos nos limitar a este caso.</description>
+    </item>
+    
+  </channel>
+</rss>

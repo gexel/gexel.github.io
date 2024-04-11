@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.78.2" />
+
+
+<title>Resolvendo o Modelo de Crescimento Neoclássico - gexel&#39;s blog</title>
+<meta property="og:title" content="Resolvendo o Modelo de Crescimento Neoclássico - gexel&#39;s blog">
+
+
+  <link href='https://gexel.github.io/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="https://github.com/gexel/">GitHub</a></li>
+    
+    <li><a href="/monitoria/">Monitoria Estat. II</a></li>
+    
+    <li><a href="/about/">Sobre mim</a></li>
+    
+    <li><a href="https://twitter.com/g_exel">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Resolvendo o Modelo de Crescimento Neoclássico</h1>
+
+    
+    <span class="article-date">2020-11-23</span>
+    
+
+    <div class="article-content">
+      
+<link href="index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<div id="a-dinâmica-do-modelo-de-crescimento-neoclássico" class="section level1">
+<h1>A dinâmica do modelo de crescimento neoclássico</h1>
+<p>Neste post, pretendo encontrar a solução para a dinâmica do modelo de crescimento neoclássico, isto é, a <em>regra</em> para as sequências <span class="math inline">\(\{k_t\}_{t = 0}^\infty\)</span> e <span class="math inline">\(\{c_t\}_{t = 0}^\infty\)</span> dado um valor inicial <span class="math inline">\(k_0 &gt; 0\)</span>.</p>
+<div id="o-problema" class="section level2">
+<h2>O problema</h2>
+<p>O modelo de crescimento neoclássico tem solução analítica quando <span class="math inline">\(\delta = 1\)</span>, isto é, quando todo o capital se deprecia de um período para o outro, então vamos nos limitar a este caso. Considerando uma função de utilidade genérica <span class="math inline">\(u(c)\)</span> e uma função de produção genérica <span class="math inline">\(f(k)\)</span> que obedecem as condições de Inada, o problema pode ser escrito como:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\max_{\{c_t\}^{\infty}_{t = 0}} \quad &amp; \sum_{t=0}^{\infty}{ \beta^{t} u(c_t) }\\
+\textrm{s.t.} \quad &amp; k_{t+1} \leq g(c_t, k_t) \equiv f(k_t) - c_t, \quad \forall t\\
+  &amp; c_t \geq 0, \quad k_t \geq 0, \quad \forall t \\
+  &amp; k_0 &gt; 0 \quad dado \\
+\end{aligned}
+\]</span></p>
+</div>
+<div id="o-princípio-do-máximo-de-pontryagin" class="section level2">
+<h2>O princípio do máximo de Pontryagin</h2>
+<p>Para resolver este problema, vamos usar o princípio do máximo de Pontryagin, que pede a definição uma função auxiliar conhecida como <em>Hamiltoniano</em> (no tempo <span class="math inline">\(t\)</span>):</p>
+<p><span class="math display">\[
+H_t(k_t, c_t, \lambda_{t+1}) \equiv \beta^t u(c_t) + \lambda_{t+1}g(k_t, c_t)
+\]</span></p>
+<p>As condições para um ótimo são:</p>
+<p><strong>Equação adjunta</strong>: <span class="math display">\[\lambda_t^* = \nabla_k H_t(k_t^*, c_t^*, \lambda_{t+1}^*)\]</span>
+<strong>Princípio do máximo fraco</strong>: <span class="math display">\[ \nabla_c^* H_t(k_t^*, c_t^*, \lambda_{t+1}^*) = 0 \]</span>
+<strong>Folga complementar</strong>: <span class="math display">\[ \lambda_{t+1}^*\big[ g(k_t^*, c_t^*) - k_{t+1}^* \big] = 0 \]</span></p>
+</div>
+<div id="encontrando-a-solução" class="section level2">
+<h2>Encontrando a solução</h2>
+<p>De cada uma das condições, temos, respectivamente:</p>
+<p><span class="math display" id="eq:ea">\[\begin{align}
+\lambda_t = \lambda_{t+1} f&#39;(k_t) + \beta^t 0
+\tag{1}
+\end{align}\]</span>
+<span class="math display" id="eq:wmp">\[\begin{align}
+-\lambda_{t+1} + \beta^t u&#39;(c_t) = 0
+\tag{2}
+\end{align}\]</span>
+<span class="math display" id="eq:cs">\[\begin{align}
+\lambda_{t+1}(f(k_t) - c_t - k_{t+1}) = 0
+\tag{3}
+\end{align}\]</span></p>
+<p>Resolvemos as equações para o caso <span class="math inline">\(u(c_t) = ln c_t\)</span> e <span class="math inline">\(f(k_t) = k_t^\alpha\)</span>.</p>
+<p>De <a href="#eq:wmp">(2)</a>, temos:
+<span class="math display">\[
+\lambda_{t+1} = \beta u&#39;(c_t)
+\]</span></p>
+<p>Substituindo em <a href="#eq:cs">(3)</a>:
+<span class="math display" id="eq:4">\[\begin{equation}
+\beta u&#39;(c_t) = \beta u&#39;(c_{t+1}) f&#39;(k_{t+1}), \quad \forall t
+\tag{4}
+\end{equation}\]</span></p>
+<p>Como <span class="math inline">\(\lambda_t &gt; 0 \quad \forall t\)</span>, temos também:</p>
+<p><span class="math display" id="eq:5">\[\begin{equation}
+k_t^\alpha - c_t - k_{t+1} = 0, \quad \forall t
+\tag{5}
+\end{equation}\]</span></p>
+<p>Substituindo <a href="#eq:5">(5)</a> em <a href="#eq:4">(4)</a>:</p>
+<p><span class="math display">\[
+k_t^\alpha - k_{t+1} = \frac{k_{t+1}^\alpha + k_{t+2}}{\beta \alpha k_{t+1}^{\alpha-1}}
+\]</span></p>
+<p>Isolando <span class="math inline">\(k_{t+2}\)</span>:
+<span class="math display">\[\begin{align*}
+k_{t+2} &amp; = k_{t+1}^\alpha - \beta \alpha (k_t^\alpha - k_{t+1})k_{t+1}^\alpha \\
+&amp; = k_{t+1}^{\alpha-1}[k_{t+1} - \beta \alpha k_t^\alpha] + \beta \alpha k_{t+1}^\alpha
+\end{align*}\]</span></p>
+<p>Observe que, se <span class="math inline">\(k_{t+1} = \beta \alpha k_t^\alpha\)</span>, o termo entre colchetes é igual a zero e ficamos apenas <span class="math inline">\(k_{t+2} = \beta \alpha k_{t+1}^\alpha\)</span>, que é a mesma equação, mas para o tempo <span class="math inline">\(t+1\)</span>.</p>
+<p>O modelo, portanto, reduz para a equação em diferenças de primeiro grau:
+<span class="math display">\[
+k_{t+1} = \beta \alpha k_t^\alpha
+\]</span></p>
+<p>De cuja solução é simplesmente:
+<span class="math display">\[
+k_t = \exp \bigg[ \frac{(\alpha^t - 1)(ln\beta + ln\alpha)}{\alpha - 1} \bigg] + A \alpha^{t - 1}
+\]</span></p>
+<p>Onde <span class="math inline">\(A\)</span> é uma constante que pode ser determianda a partir do valor inicial <span class="math inline">\(k_0\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+k_0 &amp;= \exp \bigg[ \frac{(\alpha^0 - 1)(ln\beta + ln\alpha)}{\alpha - 1}\bigg] + A \alpha^{0 - 1} \\
+&amp;= 1 + \frac{A}{\alpha} \\
+\\
+A &amp;= \alpha(k_0 -1)
+\end{align*}\]</span></p>
+<p>Podemos encontrar a regra para a sequência <span class="math inline">\(\{c_t\}_{t = 0}^\infty\)</span> a partir da equação <a href="#eq:5">(5)</a>.</p>
+<p>A solução do modelo de crescimento neoclássico é, portanto:</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{&gt;{\displaystyle\tallstrut}l@{}}
+k_t = \exp \bigg[ \frac{(\alpha^t - 1)(ln\beta + ln\alpha)}{\alpha - 1} \bigg] + (k_0 -1) \alpha^{t} \\
+c_t = \bigg( \exp \bigg[ \frac{(\alpha^t - 1)(ln\beta + ln\alpha)}{\alpha - 1} \bigg] + (k_0 -1) \alpha^{t} \bigg)^\alpha - \exp \bigg[ \frac{(\alpha^{t+1} - 1)(ln\beta + ln\alpha)}{\alpha - 1} \bigg] + (k_0 -1) \alpha^{t+1} 
+\end{array}
+\right.
+\]</span></p>
+<p>Recomendo, a quem se interessar, que entre <a href="https://www.desmos.com/calculator/th7iqurjxs">neste link do Desmos (criado especialmente para este post)</a> para explorar a solução do modelo para diferentes valores dos parâmetros. Neste site você poderá alterar os valores de <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> e <span class="math inline">\(k_0\)</span> através de <em>sliders</em> de seleção, e observar como as trajetórias de consumo estoque de capital reagem a essas alterações.</p>
+</div>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

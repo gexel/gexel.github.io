@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>econometria on gexel&#39;s blog</title>
+    <link>https://gexel.github.io/tags/econometria/</link>
+    <description>Recent content in econometria on gexel&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://gexel.github.io/tags/econometria/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Método dos Mínimos ________ Ordinários</title>
+      <link>https://gexel.github.io/2020/11/20/dae/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://gexel.github.io/2020/11/20/dae/</guid>
+      <description>Por que minimizar a soma dos quadrados dos resíduos? Se você acredita que uma certa variável \(\mathbf{y} = (y_1, y_2, \cdots, y_{n-1}, y_n )\) é gerada por
+\[ y_i = \beta_0 + \beta_1 x_i + \varepsilon_i \quad , \quad \quad i = 1, 2, \cdots, n \]
+E, a partir de \(n\) observações, você busca estimar \(\hat\beta_0\) e \(\hat\beta_1\), como você pode calcular esses coeficientes?
+O leitor deve estar familiarizado com o método dos Mínimos Quadrados Ordinários (MQO), em que se encontra os coeficientes \(\hat \beta_0\) e \(\hat\beta_1\) da reta de regressão \(\hat y_i = \hat \beta_0 + \hat\beta_1 x_i\) minimizando a soma dos quadrados dos resíduos:</description>
+    </item>
+    
+  </channel>
+</rss>
