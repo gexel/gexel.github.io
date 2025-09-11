@@ -1,0 +1,7 @@
+#+TITLE: Home
+#+OPTIONS: toc:nil num:nil
+
+* Welcome
+This is my website.
+
+- [[file:2025-09-11-first.org][First post]]
