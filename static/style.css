@@ -1,0 +1,29 @@
+body {
+    max-width: 720px;
+    margin: 60px auto;
+    padding: 0 20px;
+
+    background-color: #1e1b18;   /* warm dark brown */
+    color: #e8e2d8;              /* warm light text */
+
+    font-family: serif;
+    line-height: 1.7;
+}
+
+a {
+    color: #d8a657;              /* muted warm amber */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+code, pre {
+    background-color: #2a2521;
+    padding: 2px 4px;
+}
