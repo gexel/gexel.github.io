@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-02-17 Tue 13:00 -->
+<!-- 2026-02-17 Tue 13:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Using Gauss-Markov to derive the OLS estimator.</title>
@@ -52,6 +52,9 @@ Consider the standard linear regression model
 y = X \beta + \varepsilon
 \]
 with fixed regressors and i.i.d. errors.
+</p>
+
+<p>
 You are probably aware that the Ordinary Least Squares (OLS) estimator for \(\beta\) minimizes the Sum of Squared Residuals (RSS), i.e.
 </p>
 \begin{equation} \label{eq:minrss}
@@ -63,6 +66,9 @@ And, from the Gauss&#x2013;Markov theorem, you also know that among all <b>linea
 
 <p>
 What a coincidence! We obtain the estimator by minimizing the RSS without constraints, and it turns out to also minimize a different objective (variance) subject to constaints (linearity and unbiasedness). How come these two problems deliver the same solution?
+</p>
+
+<p>
 The standard proof of the Gauss&#x2013;Markov theorem is non-constructive. It starts from the closed for solution 
 \(
 \hat \beta_{\text{OLS}} = (X'X)^{-1}X'y
