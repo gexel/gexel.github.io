@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-02-16 Mon 16:22 -->
+<!-- 2026-02-17 Tue 13:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Using Gauss-Markov to derive the OLS estimator.</title>
@@ -52,10 +52,7 @@ Consider the standard linear regression model
 y = X \beta + \varepsilon
 \]
 with fixed regressors and i.i.d. errors.
-</p>
-
-<p>
-You are probably aware that the Ordinary Least Squares (OLS) estimator \(\hat \beta_{\text{OLS}}\) for \(\beta\) minimizes the Sum of Squared Residuals (RSS), i.e.
+You are probably aware that the Ordinary Least Squares (OLS) estimator for \(\beta\) minimizes the Sum of Squared Residuals (RSS), i.e.
 </p>
 \begin{equation} \label{eq:minrss}
 \hat \beta_{\text{OLS}} = \text{arg}\min_{b} \enspace (y - Xb)'(y - Xb)
@@ -65,23 +62,21 @@ And, from the Gauss&#x2013;Markov theorem, you also know that among all <b>linea
 </p>
 
 <p>
-What a coincidence: we obtain the estimator by minimizing the RSS without constraints, and it turns out to also minimize a different objective (variance) subject to constaints (linearity and unbiasedness). How come these two problems deliver the same solution?
-</p>
-
-<p>
-The standard proof of the Gauss&#x2013;Markov theorem is non-constructive. It begins with 
+What a coincidence! We obtain the estimator by minimizing the RSS without constraints, and it turns out to also minimize a different objective (variance) subject to constaints (linearity and unbiasedness). How come these two problems deliver the same solution?
+The standard proof of the Gauss&#x2013;Markov theorem is non-constructive. It starts from the closed for solution 
 \(
 \hat \beta_{\text{OLS}} = (X'X)^{-1}X'y
 \)
-and, using matrix algebra, shows that any other linear unbiased estimator has variance weakly larger than that of \(\hat \beta_{\text{OLS}}\).
+and, using some nifty  matrix algebra tricks, shows that any other linear unbiased estimator has variance weakly larger than that of \(\hat \beta_{\text{OLS}}\).
 </p>
 
 <p>
-Can we instead formulate a well-defined constrained minimization problem (analogous to \eqref{eq:minrss}) and solve it using standard optimization techniques—thereby deriving \(\hat \beta_{\text{OLS}}\) and proving the Gauss-Markov result simultaneously? The answer is yes, and this is what we will do after a brief digression about what &ldquo;minimum variance&rdquo; really means.
+Can we instead formulate a well-defined constrained minimization problem (analogous to \eqref{eq:minrss}) and solve it using standard optimization techniques—thereby deriving \(\hat \beta_{\text{OLS}}\) and proving the Gauss-Markov result simultaneously? The answer is yes, and this is what we will do after a brief digression about what <i>minimum variance</i> really means.
 </p>
 
 <p>
-Unlike the RSS, which is always a number, \(\operatorname{Var}\left(\hat \beta_{\text{OLS}}\right)\) is a matrix. 
+Unlike the RSS, which is always a number, \(\operatorname{Var}\left(\hat \beta_{\text{OLS}}\right)\) is a matrix. We say matrix \(A\) is <i>smaller</i> than matrix \(B\) if \(B - A\) is positive semidefinite, which we denote by \(A \preceq B\). This is the definition employed by the Gauss&#x2013;Markov theorem, which states \(\operatorname{Var}\left(b\right) - \operatorname{Var}\left(\hat \beta_{\text{OLS}}\right)\) is positive semidefinite for any linear unbiased estimator \(b\) of \(\beta\). This, however, only defines a <i>partial</i> order in the space of symmetric matrices, as the difference \(B-A\) may very well be indefinite, in which case we have neither \(A\preceq B\) or \(B\preceq A\). The fact that the OLS estimator actually attains the smallest variance (as opposed to smaller <b>or</b> incomparable) is itself a non-trivial result of the Gauss&#x2013;Markov theorem which is easy to overlook.
+A
 </p>
 </div>
 </body>
